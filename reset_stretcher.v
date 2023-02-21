@@ -1,27 +1,8 @@
-/*module reset_stretcher(clk,rst_i,rst_o);
-  input clk;
-  input rst_i;
-  output rst_o;
-  parameter PERIOD =4;
-  parameter  RST_POL= 1;
-  reg flipflops;
-  always@(posedge clk)
-  begin
-    if(rst_i=RST_POL) 
-    flipflops <=  RST_POL; 
-      //flipflops<= RST_POL;
-    else
-      begin
-      //flipflops <= flipflops ? flipflops[1:0]&RST_POL;
-      flipflops <=  ~RST_POL ;
-      rst_o<= flipflops;
-    end
-    end
-  endmodule */
+
 module reset_stretcher (
-  input wire clk,
-  input wire rst_i,
-  output wire rst_o
+  input  clk,
+  input  rst_i,
+  output reg rst_o
 );
 
   parameter PERIOD = 4;
